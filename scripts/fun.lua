@@ -26,30 +26,22 @@ print("Creating new window")
 local window = engine.window.new(640, 480, "My Window")
 local color = { r, g, b, a }
 local v_color = { r, g, b, a }
-v_color.r = 1
-v_color.g = 1
-v_color.b = 1
-v_color.a = 1
---print(window)
-color.r = 0
-color.g = 100
-color.b = 200
-color.a = 255
+local top_right_pane = window:createPane(320, 240)
+local top_left_pane = window:createPane(320, 240)
+local bottom_left_pane = window:createPane(320, 240)
+local bottom_right_pane = window:createPane(320, 240)
 
+
+top_left_pane:setOrientation(0, 0)
+top_left_pane:setColor(0, 255, 127, 127)
+top_right_pane:setOrientation(319, 0)
+top_right_pane:setColor(127, 0, 127, 127)
+bottom_left_pane:setOrientation(319, 239)
+bottom_left_pane:setColor(255, 0, 127, 127)
+bottom_right_pane:setOrientation(0, 239)
+bottom_right_pane:setColor(0, 0, 127, 127)
 
 while window:mainloop() do
-
-    v_color.r = update_velocity(v_color.r, color.r)
-    v_color.g = update_velocity(v_color.g, color.g)
-    v_color.b = update_velocity(v_color.b, color.b)
-    v_color.a = update_velocity(v_color.a, color.a)
-
-    color.r = color.r + v_color.r
-    color.g = color.g + v_color.g
-    color.b = color.b + v_color.b
-    color.a = color.a + v_color.a
-
-    window:setcolor(color.r, color.g, color.b, color.a)
 end
 
 print("All done")
