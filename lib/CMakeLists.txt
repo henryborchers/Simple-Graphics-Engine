@@ -1,7 +1,11 @@
 set(SOURCE_FILES
-        gengine.c gengine.h graphics.c graphics.h
+        gengine.c gengine.h
+        graphics.c graphics.h
         scripting.h scripting.c
-        window.c window.h lua_glue.c lua_glue.h)
+        window.c window.h
+        pane.c pane.h
+        lua_glue.c lua_glue.h
+        )
 set(DEPENDENCIES_FOUND yes)
 
 if (NOT LUA_FOUND)
@@ -27,7 +31,3 @@ ELSE ()
     target_include_directories(gengine PRIVATE ${SDL2_INCLUDE_DIR})
     target_link_libraries(gengine ${SDL2_LIBRARIES})
 endif ()
-add_dependencies(gengine scripts)
-#add_custom_command(TARGET gengine PRE_BUILD
-#        COMMAND ${CMAKE_COMMAND} -E copy_directory
-#        ${CMAKE_SOURCE_DIR}/scripts ${CMAKE_BINARY_DIR}/scripts)
