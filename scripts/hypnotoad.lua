@@ -46,23 +46,26 @@ local color = { r, g, b, a }
 local v_color = { r, g, b, a }
 
 
-local back = window:createPane(300, 150)
-local head = window:createPane(300, 250)
-local belly = window:createPane(280, 120)
-local nose = window:createPane(300, 30)
+local back = window:createPane(200, 150)
+local head = window:createPane(200, 255)
+local belly = window:createPane(180, 120)
+local nose = window:createPane(230, 30)
+local lip = window:createPane(220, 10)
 
 local left_eye = create_eye(window, 150, 150)
-local right_eye = create_eye(window, 400, 150)
+local right_eye = create_eye(window, 300, 150)
 
 
 head:setColor(154, 102, 0, 255)
 back:setColor(154, 102, 0, 255)
 belly:setColor(204, 152, 100, 255)
-nose:setColor(124, 82, 0, 255)
+nose:setColor(154, 102, 0, 255)
+lip:setColor(124, 82, 0, 255)
 
 
 head:setOrientation(180, 200)
-nose:setOrientation(170, 290)
+lip:setOrientation(150, 340)
+nose:setOrientation(150, 320)
 belly:setOrientation(185, 320)
 back:setOrientation(285, 300)
 
