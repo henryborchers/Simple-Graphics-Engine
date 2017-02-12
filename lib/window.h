@@ -5,19 +5,12 @@
 #ifndef GRAPHICS_WINDOW_H
 #define GRAPHICS_WINDOW_H
 
-#include "gengine.h"
-#include "window.h"
-#include <SDL2/SDL.h>
+static const int CHILDREN_CONTAINER_START_SIZE = 8;
 
-typedef struct {
-    int height;
-    int width;
-    SDL_Window *window;
-    SDL_Renderer *renderer;
-    SDL_Texture *texture;
-    SDL_Color background;
-    char *title;
-} Window;
+#include <SDL2/SDL.h>
+#include "gengine.h"
+
+
 
 Window *window_create();
 
