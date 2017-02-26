@@ -36,6 +36,7 @@ static int window_LCreatePane(lua_State *l);
 // Pane
 static int pane_tostring(lua_State *l);
 
+static int pane_remove(lua_State *L);
 //static int pane_gc(lua_State *l);
 
 static int pane_setOrientation(lua_State *l);
@@ -52,16 +53,17 @@ static const luaL_Reg window_funcs[] = {
 };
 
 static const luaL_Reg window_methods[] = {
-        {"__tostring", window_tostring},
-        {"__gc",       window_gc},
-        {"mainloop",   window_Lmainloop},
-        {"createPane", window_LCreatePane},
-        {"setColor",   window_LsetColor},
+        {"__tostring",  window_tostring},
+        {"__gc",        window_gc},
+        {"mainloop",    window_Lmainloop},
+        {"create_pane", window_LCreatePane},
+        {"setColor",    window_LsetColor},
         {NULL, NULL}
 };
 
 static const luaL_Reg pane_methods[] = {
         {"__tostring",     pane_tostring},
+        {"remove",         pane_remove},
         {"setColor",       pane_LsetColor},
         {"setSize",        pane_setSize},
         {"setOrientation", pane_setOrientation},
@@ -203,7 +205,10 @@ int pane_tostring(lua_State *l) {
     return 1;
 }
 
-
+int pane_remove(lua_State *L) {
+    puts("Removing pane");
+    return 0;
+}
 //int pane_gc(lua_State *l) {
 //    lpane *p = NULL;
 //    p = (lpane *) lua_touserdata(l, 1);
