@@ -8,6 +8,7 @@ set(scripts_src
         scripts
         scripts/fun.lua
         scripts/hypnotoad.lua
+        scripts/repl.lua
         )
 add_subdirectory(lib)
 add_subdirectory(src)
